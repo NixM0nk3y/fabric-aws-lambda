@@ -93,7 +93,7 @@ class MakeZipTask(BaseTask):
 
     def makezip(self):
         options = dict(zip_file=self.zip_file, exclude_file=self.exclude_file)
-        local('zip -r9 {zip_file} * -x@{exclude_file}'.format(**options))
+        local('zip -r9 {zip_file} . -x@{exclude_file}'.format(**options))
 
     def makezip_basepath(self):
         self.makezip()
